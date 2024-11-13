@@ -18,8 +18,8 @@ logger = get_logger(__name__)
 #     password = account_information['password']
 #     total_page = account_information['totalPage']
 
-account = '19533941201'
-password = 'Abcd1234'
+account = '' #账户
+password = ''#密码
 total_page = 1
 
 # 开启会话
@@ -64,7 +64,7 @@ else:
 authorization_code = do_login.json()['authorization_code']  # 这个授权码是不变的
 
 session.get(
-    f'https://www.zjooc.cn/login?time={utils.generateRandomStringWithTimestamp(32)}'
+    f'https://www.zjooc.cn/login?time={utils.generateRandomStringWithTimestamp(32)}',verify = False
 )
 
 referer = f"https://www.zjooc.com/?auth_code={authorization_code}"
