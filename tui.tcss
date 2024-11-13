@@ -1,0 +1,12 @@
+Screen {
+    align: center middle;
+}
+
+Input {
+    margin:1;
+}
+
+Button {
+    margin:1;
+    width: 100%;
+}
