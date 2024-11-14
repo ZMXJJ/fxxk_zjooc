@@ -12,15 +12,15 @@ from logger import get_logger
 
 logger = get_logger(__name__)
 
-# with open('account.json') as account_information_file:
-#     account_information = json.load(account_information_file)
-#     account = account_information['account']
-#     password = account_information['password']
-#     total_page = account_information['totalPage']
+with open('account.json') as account_information_file:
+    account_information = json.load(account_information_file)
+    account = account_information['account']
+    password = account_information['password']
+    total_page = account_information['totalPage']
 
-account = '' #账户
-password = ''#密码
-total_page = 1
+# account = '' #账户
+# password = ''#密码
+# total_page = 1
 
 # 开启会话
 session: Session = requests.session()

@@ -1,6 +1,7 @@
 import json
 from textual.app import App, ComposeResult
 from textual.widgets import Footer, Input, Header, Static, Button
+import traceback
 
 # 用户信息
 user_information: dict = {"account": "", "password": "", "totalPage": 1}
@@ -47,6 +48,11 @@ class VideoApp(App):
 if __name__ == "__main__":
     VideoApp().run()
     # 运行刷课代码
-    with open('video.py', 'r') as code_file:
+    with open('video.py', 'r', encoding='utf-8') as code_file:
         code = code_file.read()
-    exec(code)
+    try:
+        exec(code)
+        print("程序执行完毕")
+    except Exception as e:
+        print(f"程序执行出错：{e}")
+        traceback.print_exc()
